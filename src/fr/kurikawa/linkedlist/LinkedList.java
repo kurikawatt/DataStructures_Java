@@ -86,7 +86,7 @@ public class LinkedList {
         }
         Link cursor = this.firstLink;
         String res = "[BEGIN] -> ";
-        while (cursor != null) {
+        while (cursor != null && cursor != this.lastLink) {
             res = res + cursor.toString() + " -> ";
             cursor = cursor.getNext();
         }
