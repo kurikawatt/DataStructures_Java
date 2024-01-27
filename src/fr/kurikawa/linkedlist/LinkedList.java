@@ -24,6 +24,10 @@ public class LinkedList {
         return this.length;
     }
 
+    public boolean isCircular(){
+        return this.firstLink.getNext() == this.lastLink || this.lastLink.getPrevious() == firstLink;
+    }
+
     public void linkAsFirst(Link link){
         // Si la liste est vide
         if (this.length == 0){
