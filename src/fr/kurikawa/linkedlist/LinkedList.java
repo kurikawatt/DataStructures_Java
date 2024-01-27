@@ -38,6 +38,16 @@ public class LinkedList {
         return this.firstLink.getNext() == this.lastLink || this.lastLink.getPrevious() == firstLink;
     }
 
+    public void makeCircular(){
+        this.firstLink.linkToPrevious(this.lastLink);
+        this.lastLink.linkToNext(this.firstLink);
+    }
+
+    public void makeLinear(){
+        this.firstLink.linkToPrevious(null);
+        this.lastLink.linkToNext(null);
+    }
+
     public void linkAsFirst(Link link){
         // Si la liste est vide
         if (this.length == 0){
