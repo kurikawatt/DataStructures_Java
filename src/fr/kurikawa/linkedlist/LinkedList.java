@@ -84,6 +84,18 @@ public class LinkedList {
         }
     }
 
+    public void removeValue(Object value){
+        Link linkToBeDeleted = search(value);
+        if (linkToBeDeleted != null){
+            // On recupère les liens précédent et suivant
+            Link previousLink = linkToBeDeleted.getPrevious();
+            Link nextLink = linkToBeDeleted.getNext();
+            // On les connecte entre eux
+            previousLink.linkToNext(nextLink);
+            nextLink.linkToPrevious(previousLink);
+        }
+    }
+
     public Link search(Object value){
         Link cursor = this.firstLink;
         while (cursor != null) {
