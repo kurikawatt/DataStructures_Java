@@ -12,4 +12,8 @@ public class Link {
         this.nextLink = nextLink;
     }
 
+    public Link(Object value){
+        this(value, null, null);
+    }
+
 }
