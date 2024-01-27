@@ -1,0 +1,23 @@
+<project>
+    <target name="clean">
+        <delete dir="build"></delete>
+    </target>
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes"/>
+    </target>
+    <target name="jar">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/DataStructures.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Manifest-Version" value="1.0"></attribute>
+                <attribute name="Created-By" value="21.0.1 (openjdk)"></attribute>
+                <attribute name="Author" value="François 'Kurikawa'"></attribute>
+                <attribute name="Main-Class" value="fr.kurikawa.hello.HelloWorld"></attribute>
+            </manifest>
+        </jar>
+    </target>
+     <target name="run">
+        <java jar="build/jar/DataStructures.jar" fork="true"/>
+    </target>
+</project>  
