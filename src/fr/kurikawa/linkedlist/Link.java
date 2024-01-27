@@ -28,4 +28,16 @@ public class Link {
         return this.previousLink;
     }
 
+    public void setValue(Object newValue){
+        this.value = newValue;
+    }
+
+    public void linkToNext(Link newNext){
+        this.nextLink = newNext;
+    }
+
+    public void linkToPrevious(Link newPrevious){
+        this.previousLink = newPrevious;
+    }
+
 }
