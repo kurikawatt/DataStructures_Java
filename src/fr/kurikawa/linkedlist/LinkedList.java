@@ -36,4 +36,18 @@ public class LinkedList {
         length++;
     }
 
+    @Override
+    public String toString() {
+        if (this.length == 0){
+            return "Empty list.";
+        }
+        Link cursor = this.firstLink;
+        String res = "[BEGIN] -> ";
+        while (cursor != null) {
+            res = res + cursor.toString() + " -> ";
+            cursor = cursor.getNext();
+        }
+        return res + "[END]";
+    }
+
 }
