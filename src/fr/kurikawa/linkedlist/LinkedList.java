@@ -15,6 +15,13 @@ public class LinkedList {
         this.length = 0; 
     }
 
+    public LinkedList(List<Object> originList){
+        this();
+        for (Object o : originList){
+            this.linkAsLast(new Link(o));
+        }
+    }
+
     public Link head(){
         return this.firstLink;
     }
