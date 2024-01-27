@@ -16,4 +16,16 @@ public class Link {
         this(value, null, null);
     }
 
+    public Object getValue(){
+        return this.value;
+    }
+
+    public Link getNext(){
+        return this.nextLink;
+    }
+
+    public Link getPrevious(){
+        return this.previousLink;
+    }
+
 }
