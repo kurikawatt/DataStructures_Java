@@ -12,6 +12,14 @@ public class LinkedList {
         this.length = 0; 
     }
 
+    public Link head(){
+        return this.firstLink;
+    }
+
+    public Link tail(){
+        return this.lastLink;
+    }
+
     public int length(){
         return this.length;
     }
