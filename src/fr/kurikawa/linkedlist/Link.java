@@ -44,4 +44,9 @@ public class Link {
         this.nextLink = this.previousLink = null;
     }
 
+    @Override 
+    public String toString(){
+        return "(" + this.value.toString() + ")";
+    }
+
 }
