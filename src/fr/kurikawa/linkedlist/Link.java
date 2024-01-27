@@ -40,4 +40,8 @@ public class Link {
         this.previousLink = newPrevious;
     }
 
+    public void unlink(){
+        this.nextLink = this.previousLink = null;
+    }
+
 }
