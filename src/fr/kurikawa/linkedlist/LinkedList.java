@@ -1,5 +1,8 @@
 package fr.kurikawa.linkedlist;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LinkedList {
     
     private Link firstLink;
@@ -77,6 +80,16 @@ public class LinkedList {
 
     public boolean contains(Object value){
         return this.search(value) != null;
+    }
+
+    public List<Object> getAllValues(){
+        List<Object> allValues = new ArrayList<Object>();
+        Link cursor = this.firstLink;
+        while (cursor != null && cursor != this.lastLink) {
+            allValues.add(cursor.getValue());
+            cursor = cursor.getNext();
+        }
+        return allValues;
     }
 
     @Override
