@@ -44,6 +44,22 @@ public class LinkedList {
         length++;
     }
 
+    public void linkAfterValue(Link link, Object value){
+        Link previousLink = this.search(value);
+        if (previousLink != null){
+            // On garde le prochain maillon en mémoire
+            Link nextLink = previousLink.getNext();
+            // On lie notre maillon
+            link.linkToPrevious(previousLink);
+            link.linkToNext(nextLink);
+            // On lie le précédent pour qu'il pointe sur le lien inséré
+            previousLink.linkToNext(link);
+            // On lie l'ancien lien suivant, afin qu'il pointe sur le lien
+            // inseré en tant que prédecesseur
+            nextLink.linkToPrevious(link);
+        }
+    }
+
     public Link search(Object value){
         Link cursor = this.firstLink;
         while (cursor != null) {
