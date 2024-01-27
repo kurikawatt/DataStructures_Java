@@ -44,6 +44,21 @@ public class LinkedList {
         length++;
     }
 
+    public Link search(Object value){
+        Link cursor = this.firstLink;
+        while (cursor != null) {
+            if (cursor.getValue().equals(value)){
+                return cursor;
+            }
+            cursor = cursor.getNext();
+        }
+        return null;
+    }
+
+    public boolean contains(Object value){
+        return this.search(value) != null;
+    }
+
     @Override
     public String toString() {
         if (this.length == 0){
