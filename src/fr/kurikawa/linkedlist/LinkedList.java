@@ -22,4 +22,14 @@ public class LinkedList {
         length++;
     }
 
+    public void linkAsLast(Link link){
+        // Si la liste est vide
+        if (this.length == 0){
+            this.firstLink = link;
+        }
+        link.linkToPrevious(this.lastLink);
+        this.lastLink = link;
+        length++;
+    }
+
 }
