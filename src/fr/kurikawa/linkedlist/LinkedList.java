@@ -12,6 +12,10 @@ public class LinkedList {
         this.length = 0; 
     }
 
+    public int length(){
+        return this.length;
+    }
+
     public void linkAsFirst(Link link){
         // Si la liste est vide
         if (this.length == 0){
