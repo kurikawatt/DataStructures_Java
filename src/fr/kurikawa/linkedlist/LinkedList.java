@@ -135,4 +135,17 @@ public class LinkedList {
         return res + "[END]";
     }
 
+    public String reversedToString(){
+        if (this.length == 0){
+            return "Empty list.";
+        }
+        Link cursor = this.lastLink;
+        String res = "[END] -> ";
+        while (cursor != null && cursor != this.firstLink) {
+            res = res + cursor.toString() + " -> ";
+            cursor = cursor.getNext();
+        }
+        return res + "[BEGIN]";
+    }
+
 }
